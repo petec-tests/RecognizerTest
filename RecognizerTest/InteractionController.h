@@ -6,10 +6,17 @@
 @import UIKit;
 @protocol InteractionControllerDelegate;
 
+typedef NS_ENUM(NSUInteger, InteractionControllerPressState) {
+    InteractionControllerPressStateNone,
+    InteractionControllerPressStateLeft,
+    InteractionControllerPressStateRight,
+};
+
+
 
 @interface InteractionController : NSObject
 
-@property (nonatomic, assign, getter=isPressing, readonly) BOOL pressing;
+@property (nonatomic, assign, readonly) InteractionControllerPressState pressState;
 @property (nonatomic, weak) id<InteractionControllerDelegate> delegate;
 
 - (instancetype)initWithView:(UIView*)view;

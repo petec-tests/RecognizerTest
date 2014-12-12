@@ -10,8 +10,6 @@
 @property (nonatomic, strong) UILongPressGestureRecognizer *longPressRecognizer;
 @property (nonatomic, strong) UIPanGestureRecognizer *panRecognizer;
 
-@property (nonatomic, assign, getter=isPressing) BOOL pressing;
-
 @end
 
 
@@ -30,14 +28,16 @@
         _panRecognizer.delegate = self;
         _panRecognizer.cancelsTouchesInView = NO;
         [view addGestureRecognizer:_panRecognizer];
+        
+        _pressState = InteractionControllerPressStateNone;
     }
     
     return self;
 }
 
-- (void)setPressing:(BOOL)pressing {
-    if (_pressing != pressing) {
-        _pressing = pressing;
+- (void)setPressState:(InteractionControllerPressState)newState {
+    if (_pressState != newState) {
+        _pressState = newState;
         
         if ([self.delegate respondsToSelector:@selector(interactionControllerDidTogglePressingState:)]) {
             [self.delegate interactionControllerDidTogglePressingState:self];
@@ -52,15 +52,24 @@
 
 - (void)handleLongPressRecognizer:(UILongPressGestureRecognizer*)recongizer {
     switch (self.longPressRecognizer.state) {
-        case UIGestureRecognizerStateBegan:
-            self.pressing = YES;
+        case UIGestureRecognizerStateBegan: {
+            CGFloat const viewMidX = recongizer.view.bounds.size.width / 2.0;
+            
+            if ([recongizer locationInView:recongizer.view].x < viewMidX) {
+                self.pressState = InteractionControllerPressStateLeft;
+            }
+            else {
+                self.pressState = InteractionControllerPressStateRight;
+            }
+
             break;
+        }
             
         case UIGestureRecognizerStateEnded:
         case UIGestureRecognizerStateFailed:
         case UIGestureRecognizerStateCancelled:
         case UIGestureRecognizerStatePossible:
-            self.pressing = NO;
+            self.pressState = InteractionControllerPressStateNone;
             break;
             
         case UIGestureRecognizerStateChanged:

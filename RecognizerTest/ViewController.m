@@ -30,7 +30,19 @@
 }
 
 - (void)interactionControllerDidTogglePressingState:(InteractionController *)interactionController {
-    NSLog(@"%@", interactionController.isPressing ? @"Pressing" : @"Released");
+    switch (interactionController.pressState) {
+        case InteractionControllerPressStateNone:
+            NSLog(@"Released");
+            break;
+            
+        case InteractionControllerPressStateLeft:
+            NSLog(@"Holding left");
+            break;
+            
+        case InteractionControllerPressStateRight:
+            NSLog(@"Holding right");
+            break;
+    }
 }
 
 
