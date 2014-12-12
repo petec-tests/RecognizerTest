@@ -29,7 +29,7 @@
     NSLog(@"Swiped");
 }
 
-- (void)interactionControllerDidTogglePressingState:(InteractionController *)interactionController {
+- (void)interactionControllerDidTogglePressState:(InteractionController *)interactionController {
     switch (interactionController.pressState) {
         case InteractionControllerPressStateNone:
             NSLog(@"Released");

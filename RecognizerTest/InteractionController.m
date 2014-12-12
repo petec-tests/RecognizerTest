@@ -39,8 +39,8 @@
     if (_pressState != newState) {
         _pressState = newState;
         
-        if ([self.delegate respondsToSelector:@selector(interactionControllerDidTogglePressingState:)]) {
-            [self.delegate interactionControllerDidTogglePressingState:self];
+        if ([self.delegate respondsToSelector:@selector(interactionControllerDidTogglePressState:)]) {
+            [self.delegate interactionControllerDidTogglePressState:self];
         }
     }
 }

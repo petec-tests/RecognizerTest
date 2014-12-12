@@ -28,6 +28,6 @@ typedef NS_ENUM(NSUInteger, InteractionControllerPressState) {
 
 @optional
 - (void)interactionControllerDidDetectSwipe:(InteractionController*)interactionController;
-- (void)interactionControllerDidTogglePressingState:(InteractionController*)interactionController;
+- (void)interactionControllerDidTogglePressState:(InteractionController*)interactionController;
 
 @end
