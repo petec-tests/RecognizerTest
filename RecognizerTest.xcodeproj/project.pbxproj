@@ -14,6 +14,7 @@
 		B53E33CF1A3B50270001C951 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = B53E33CE1A3B50270001C951 /* Images.xcassets */; };
 		B53E33D21A3B50270001C951 /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = B53E33D01A3B50270001C951 /* LaunchScreen.xib */; };
 		B53E33DE1A3B50270001C951 /* RecognizerTestTests.m in Sources */ = {isa = PBXBuildFile; fileRef = B53E33DD1A3B50270001C951 /* RecognizerTestTests.m */; };
+		B53E33E91A3B61650001C951 /* InteractionController.m in Sources */ = {isa = PBXBuildFile; fileRef = B53E33E81A3B61650001C951 /* InteractionController.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -40,6 +41,8 @@
 		B53E33D71A3B50270001C951 /* RecognizerTestTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = RecognizerTestTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		B53E33DC1A3B50270001C951 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		B53E33DD1A3B50270001C951 /* RecognizerTestTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = RecognizerTestTests.m; sourceTree = "<group>"; };
+		B53E33E71A3B61650001C951 /* InteractionController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = InteractionController.h; sourceTree = "<group>"; };
+		B53E33E81A3B61650001C951 /* InteractionController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = InteractionController.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -85,6 +88,8 @@
 				B53E33C61A3B50270001C951 /* AppDelegate.m */,
 				B53E33C81A3B50270001C951 /* ViewController.h */,
 				B53E33C91A3B50270001C951 /* ViewController.m */,
+				B53E33E71A3B61650001C951 /* InteractionController.h */,
+				B53E33E81A3B61650001C951 /* InteractionController.m */,
 				B53E33CB1A3B50270001C951 /* Main.storyboard */,
 				B53E33CE1A3B50270001C951 /* Images.xcassets */,
 				B53E33D01A3B50270001C951 /* LaunchScreen.xib */,
@@ -221,6 +226,7 @@
 			files = (
 				B53E33CA1A3B50270001C951 /* ViewController.m in Sources */,
 				B53E33C71A3B50270001C951 /* AppDelegate.m in Sources */,
+				B53E33E91A3B61650001C951 /* InteractionController.m in Sources */,
 				B53E33C41A3B50270001C951 /* main.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
