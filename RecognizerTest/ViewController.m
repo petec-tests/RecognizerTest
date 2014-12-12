@@ -51,22 +51,13 @@
             break;
             
         case UIGestureRecognizerStateEnded:
-            self.pressing = NO;
-            break;
-            
         case UIGestureRecognizerStateFailed:
-            self.pressing = NO;
-            break;
-            
         case UIGestureRecognizerStateCancelled:
+        case UIGestureRecognizerStatePossible:
             self.pressing = NO;
             break;
 
         case UIGestureRecognizerStateChanged:
-            break;
-            
-        case UIGestureRecognizerStatePossible:
-            self.pressing = NO;
             break;
     }
 }
